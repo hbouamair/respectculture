@@ -67,7 +67,21 @@ export function SiteFooter({
         </div>
       </div>
       <div className="border-t border-line px-4 py-4 text-center text-xs text-muted">
-        © 2026 {site.name}. {copy.rights}
+        <p>
+          © 2026 {site.name}. {copy.rights}
+          <span className="mx-2 text-white/25" aria-hidden>
+            ·
+          </span>
+          {copy.madeBy}{" "}
+          <a
+            href={site.social.maker}
+            className="text-gold hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Smarty
+          </a>
+        </p>
       </div>
     </footer>
   );

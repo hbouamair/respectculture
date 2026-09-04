@@ -9,6 +9,7 @@ export const site = {
     instagramApparel: "https://www.instagram.com/respectyourculture_apparel/",
     founder: "https://www.instagram.com/scorpion_99_/",
     facebook: "https://www.facebook.com/respectyourculture/",
+    maker: "https://smarty-dev-one.vercel.app/",
   },
   contact: {
     address: "Hay Mohammadi, Casablanca 20250",

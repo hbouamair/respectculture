@@ -95,6 +95,7 @@ export type Messages = {
     apparel: string;
     book: string;
     bookHint: string;
+    madeBy: string;
   };
   notFound: {
     title: string;
@@ -202,6 +203,7 @@ export const messages: Record<Locale, Messages> = {
       apparel: "Apparel",
       book: "Book on WhatsApp",
       bookHint: "Orders and fittings — we reply on WhatsApp.",
+      madeBy: "Made by",
     },
     notFound: {
       title: "This page is off the floor",
@@ -307,6 +309,7 @@ export const messages: Record<Locale, Messages> = {
       apparel: "Apparel",
       book: "Réserver sur WhatsApp",
       bookHint: "Commandes et essayages — on répond sur WhatsApp.",
+      madeBy: "Créé par",
     },
     notFound: {
       title: "Cette page n’est pas sur le floor",
