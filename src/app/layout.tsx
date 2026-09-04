@@ -28,10 +28,11 @@ const naskh = Noto_Naskh_Arabic({
   weight: ["400", "500", "600", "700"],
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://respectyourculture.com";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://respectyourculture.com",
-  ),
+  metadataBase: new URL(siteUrl),
   title: {
     default: site.name,
     template: `%s · ${site.name}`,
