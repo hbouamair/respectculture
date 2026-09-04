@@ -1,0 +1,326 @@
+@import "tailwindcss";
+
+:root {
+  --ryc-black: #000000;
+  --ryc-surface: #0a0a0a;
+  --ryc-gold: #ffb800;
+  --ryc-white: #f5f5f5;
+  --ryc-muted: #8a8a8a;
+  --ryc-line: rgba(245, 245, 245, 0.18);
+  --glass: rgba(8, 8, 8, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.16);
+}
+
+@theme inline {
+  --color-black: #000000;
+  --color-surface: #0a0a0a;
+  --color-gold: #ffb800;
+  --color-on-gold: #000000;
+  --color-white: #f5f5f5;
+  --color-muted: #8a8a8a;
+  --color-line: rgba(245, 245, 245, 0.18);
+  --color-background: #000000;
+  --color-foreground: #f5f5f5;
+  --font-sans: var(--font-outfit);
+  --font-display: var(--font-cormorant);
+  --font-arabic: var(--font-naskh);
+}
+
+html {
+  color-scheme: dark;
+  background: #000;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #000;
+  color: #f5f5f5;
+  font-family: var(--font-outfit), system-ui, sans-serif;
+  min-height: 100svh;
+}
+
+::selection {
+  background: #ffb800;
+  color: #000;
+}
+
+:focus-visible {
+  outline: 2px solid #ffb800;
+  outline-offset: 3px;
+}
+
+a,
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+.font-display {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.font-arabic {
+  font-family: var(--font-naskh), serif;
+}
+
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.hero-shade {
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.42) 32%, rgba(0, 0, 0, 0.12) 58%, transparent 78%);
+}
+
+.hero-title {
+  text-shadow: 0 8px 40px rgba(0, 0, 0, 1), 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 2px rgba(0, 0, 0, 0.8);
+}
+
+.hero-ken {
+  animation: ken 20s ease-in-out infinite alternate;
+}
+
+@keyframes ken {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.07);
+  }
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffb800;
+  color: #000;
+  border-radius: 999px;
+  padding: 0.9rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
+  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1), filter 180ms ease;
+}
+
+.btn-gold:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.btn-line {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  color: #f5f5f5;
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  padding: 0.9rem 1.5rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  backdrop-filter: blur(12px);
+  transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
+}
+
+.btn-line:hover {
+  border-color: #ffb800;
+  color: #ffb800;
+  background: rgba(255, 184, 0, 0.08);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  animation: fade-up 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.reveal-delay-1 { animation-delay: 0.12s; }
+.reveal-delay-2 { animation-delay: 0.24s; }
+.reveal-delay-3 { animation-delay: 0.36s; }
+
+.mobile-menu {
+  animation: menu-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.mobile-link {
+  animation: fade-up 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    translate: 0 -12px;
+  }
+  to {
+    opacity: 1;
+    translate: 0;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    translate: 0 22px;
+  }
+  to {
+    opacity: 1;
+    translate: 0;
+  }
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes sheen {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.logo-float {
+  animation: float-soft 6s ease-in-out infinite;
+}
+
+.hero-figure {
+  mask-image: linear-gradient(to bottom, #000 84%, transparent 100%);
+}
+
+.hero-figure-in {
+  animation: hero-rise 1.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-wordmark {
+  animation: hero-type 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-vert {
+  writing-mode: vertical-rl;
+  letter-spacing: 0.32em;
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-type {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.mosaic-shot {
+  opacity: 0;
+  translate: 0 22px;
+}
+
+.mosaic-in .mosaic-shot {
+  animation: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.gallery-shot {
+  position: relative;
+  flex: 0 0 auto;
+  overflow: visible;
+  height: min(72svh, 720px);
+  width: calc(min(72svh, 720px) * var(--clip-w) / var(--clip-h));
+  opacity: 0;
+  animation: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-shot:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.shot-zoom {
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .shot-zoom {
+  transform: scale(1.06);
+}
+
+.gallery-dialog {
+  animation: dialog-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.scroll-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-in.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .logo-float,
+  .scroll-in,
+  .hero-figure-in,
+  .hero-wordmark,
+  .hero-ken,
+  .mosaic-shot,
+  .gallery-shot,
+  .gallery-dialog,
+  .mobile-menu,
+  .mobile-link {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    translate: none;
+  }
+
+  .group:hover img,
+  .group:hover .shot-zoom,
+  .gallery-shot:hover,
+  .btn-gold:hover {
+    transform: none;
+  }
+}
