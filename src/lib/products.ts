@@ -147,7 +147,7 @@ export const products: Product[] = [
       },
     ],
     sizes: SIZES,
-    images: ["/products/shirt-zellige/look.jpg"],
+    images: ["/products/shirt-zellige/worn.jpg"],
   },
 ];
 

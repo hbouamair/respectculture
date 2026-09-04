@@ -25,7 +25,7 @@ export const lookbookShots = [
     className: "md:col-span-2",
   },
   {
-    src: "/products/shirt-zellige/look.jpg",
+    src: "/products/shirt-zellige/worn.jpg",
     alt: { en: "Zellige long sleeve", fr: "Manches longues zellige" },
     className: "",
   },
