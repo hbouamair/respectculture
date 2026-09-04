@@ -33,8 +33,8 @@ export default async function ProductPage({ params }: Props) {
   const t = messages[locale];
 
   return (
-    <div className="mx-auto max-w-7xl px-4 pb-8 pt-28 sm:px-6">
-      <Link href="/store" className="text-sm text-muted hover:text-gold">
+    <div className="page-pad mx-auto max-w-7xl px-4 pb-20 sm:px-6">
+      <Link href="/store" className="text-sm text-muted hover:text-black">
         {t.product.back}
       </Link>
       <div className="mt-6 grid gap-10 lg:grid-cols-2 lg:items-start">
@@ -45,9 +45,9 @@ export default async function ProductPage({ params }: Props) {
           <p className="font-arabic text-xl text-gold" lang="ar" dir="rtl">
             {product.mark}
           </p>
-          <h1 className="font-display mt-3 text-4xl italic sm:text-5xl">{product.name[locale]}</h1>
-          <p className="mt-4 text-2xl text-gold">{formatMad(product.price)}</p>
-          <p className="mt-6 max-w-md text-white/80 leading-relaxed">
+          <h1 className="font-display mt-3 text-4xl sm:text-5xl">{product.name[locale]}</h1>
+          <p className="mt-4 text-xl">{formatMad(product.price)}</p>
+          <p className="mt-6 max-w-md leading-relaxed text-muted">
             {product.description[locale]}
           </p>
           <div className="mt-8">

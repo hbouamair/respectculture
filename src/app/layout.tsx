@@ -67,7 +67,7 @@ export default async function RootLayout({
       className={`${display.variable} ${outfit.variable} ${naskh.variable} h-full antialiased`}
       data-scroll-behavior="smooth"
     >
-      <body className="min-h-full bg-black text-white">
+      <body className="min-h-full bg-white text-black">
         <Providers>
           <SiteHeader locale={locale} copy={t} />
           <main>{children}</main>

@@ -17,15 +17,15 @@ export function CartDrawer({
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-[60]">
+    <div className="fixed inset-0 z-[90]">
       <button
         type="button"
-        className="absolute inset-0 bg-black/70"
+        className="absolute inset-0 bg-black/40"
         aria-label={copy.close}
         onClick={() => setOpen(false)}
       />
       <aside
-        className="glass absolute inset-y-0 right-0 flex w-full max-w-md flex-col border-l border-white/10 bg-black/70"
+        className="absolute inset-y-0 right-0 flex w-full max-w-md flex-col border-l border-line bg-white"
         role="dialog"
         aria-modal="true"
         aria-labelledby="cart-title"
@@ -35,7 +35,7 @@ export function CartDrawer({
             {copy.title}
             {count > 0 ? ` · ${count}` : ""}
           </h2>
-          <button type="button" className="text-sm text-muted hover:text-white" onClick={() => setOpen(false)}>
+          <button type="button" className="text-sm text-muted hover:text-black" onClick={() => setOpen(false)}>
             {copy.close}
           </button>
         </div>
@@ -68,7 +68,7 @@ export function CartDrawer({
                     <p className="mt-1 text-xs text-muted">
                       {line.size} · {line.color}
                     </p>
-                    <p className="mt-1 text-sm text-gold">{formatMad(line.price * line.qty)}</p>
+                    <p className="mt-1 text-sm">{formatMad(line.price * line.qty)}</p>
                     <div className="mt-2 flex items-center gap-3">
                       <label className="sr-only" htmlFor={`qty-${line.key}`}>
                         Qty
@@ -79,11 +79,11 @@ export function CartDrawer({
                         min={1}
                         value={line.qty}
                         onChange={(e) => setQty(line.key, Number(e.target.value))}
-                        className="w-16 border border-line bg-black px-2 py-1 text-sm"
+                        className="w-16 border border-line bg-white px-2 py-1 text-sm"
                       />
                       <button
                         type="button"
-                        className="text-xs text-muted hover:text-gold"
+                        className="text-xs text-muted hover:text-black"
                         onClick={() => remove(line.key)}
                       >
                         {copy.remove}
@@ -100,7 +100,7 @@ export function CartDrawer({
           <div className="border-t border-line p-5">
             <div className="mb-4 flex justify-between text-sm">
               <span>{copy.total}</span>
-              <span className="text-gold">{formatMad(total)}</span>
+              <span>{formatMad(total)}</span>
             </div>
             <Link
               href="/checkout"

@@ -97,7 +97,7 @@ export function CheckoutForm({
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full border border-line bg-black px-3 py-3"
+            className="field"
             autoComplete="name"
           />
         </div>
@@ -111,7 +111,7 @@ export function CheckoutForm({
             type="tel"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="w-full border border-line bg-black px-3 py-3"
+            className="field"
             autoComplete="tel"
           />
         </div>
@@ -124,7 +124,7 @@ export function CheckoutForm({
             required
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            className="w-full border border-line bg-black px-3 py-3"
+            className="field"
             autoComplete="address-level2"
           />
         </div>
@@ -137,7 +137,7 @@ export function CheckoutForm({
             rows={4}
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
-            className="w-full border border-line bg-black px-3 py-3"
+            className="field"
             placeholder={copy.notesHint}
           />
         </div>

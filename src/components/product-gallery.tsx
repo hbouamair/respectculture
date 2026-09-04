@@ -9,7 +9,7 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
 
   return (
     <div>
-      <div className="relative aspect-[4/5] overflow-hidden border border-line bg-surface">
+      <div className="relative aspect-[4/5] overflow-hidden bg-surface">
         <Image
           src={current}
           alt={alt}
@@ -27,7 +27,7 @@ export function ProductGallery({ images, alt }: { images: string[]; alt: string 
                 type="button"
                 onClick={() => setIndex(i)}
                 className={`relative aspect-square w-full overflow-hidden border ${
-                  i === index ? "border-gold" : "border-line"
+                  i === index ? "border-black" : "border-line"
                 }`}
                 aria-label={`${alt} ${i + 1}`}
                 aria-current={i === index}

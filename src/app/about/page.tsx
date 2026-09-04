@@ -16,10 +16,10 @@ export default async function AboutPage() {
   const t = messages[locale];
 
   return (
-    <div className="pb-8 pt-24 sm:pt-28">
+    <div className="page-pad pb-20">
       <section className="mx-auto grid max-w-7xl items-start gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-16">
         <figure className="relative">
-          <div className="relative aspect-[3/4] overflow-hidden bg-surface lg:min-h-[calc(100svh-8rem)] lg:aspect-auto">
+          <div className="relative aspect-[3/4] overflow-hidden bg-surface lg:min-h-[calc(100svh-10rem)] lg:aspect-auto">
             <Image
               src="/lookbook/scorpion-portrait.jpg"
               alt={`${site.founder.name} — ${site.founder.legalName}`}
@@ -49,12 +49,12 @@ export default async function AboutPage() {
           <p className="font-arabic text-2xl text-gold sm:text-3xl" lang="ar" dir="rtl">
             {site.nameAr}
           </p>
-          <h1 className="font-display mt-4 max-w-xl text-5xl italic leading-[0.92] sm:text-7xl">
+          <h1 className="font-display mt-4 max-w-xl text-5xl leading-[0.92] sm:text-7xl">
             {t.about.title}
           </h1>
 
-          <div className="mt-10 max-w-xl space-y-6 text-base leading-relaxed text-white/80 sm:text-lg">
-            <p className="font-display text-2xl italic leading-snug text-white">
+          <div className="mt-10 max-w-xl space-y-6 text-base leading-relaxed text-muted sm:text-lg">
+            <p className="font-display text-2xl leading-snug text-black">
               {t.about.founderStory}
             </p>
             <p>{t.about.p1}</p>

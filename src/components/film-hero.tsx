@@ -5,52 +5,40 @@ import { site } from "@/lib/site";
 
 export function FilmHero({ copy }: { copy: Messages["hero"] }) {
   return (
-    <section className="relative overflow-hidden bg-black">
-      <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[100svh]">
-        <div className="relative min-h-[58svh] overflow-hidden md:min-h-[100svh]">
-          <Image
-            src="/lookbook/hero-right.jpg"
-            alt="Respect Your Culture tapestry polo, worn"
-            fill
-            priority
-            quality={90}
-            className="hero-ken object-cover object-[center_12%]"
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-        </div>
-        <div className="relative min-h-[58svh] overflow-hidden border-t border-white/10 md:min-h-[100svh] md:border-l md:border-t-0">
-          <Image
-            src="/lookbook/hero-left.jpg"
-            alt="Respect Your Culture jersey, worn"
-            fill
-            priority
-            quality={90}
-            className="hero-ken object-cover object-[center_22%]"
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-        </div>
-      </div>
+    <section className="relative min-h-[calc(100svh-var(--chrome-h))] overflow-hidden bg-black">
+      <Image
+        src="/products/jersey-thaqafa/look-desert.jpg"
+        alt="Thaqafa jersey — Zarbia edition, worn"
+        fill
+        priority
+        quality={90}
+        className="hero-ken object-cover object-[center_18%]"
+        sizes="100vw"
+      />
+      <div className="hero-shade pointer-events-none absolute inset-0" />
 
-      <div className="hero-shade pointer-events-none absolute inset-0 z-10 hidden md:block" />
-
-      <div className="relative z-20 bg-black px-6 py-10 text-center md:absolute md:inset-0 md:flex md:items-end md:bg-transparent md:px-8 md:py-0 md:pb-12 md:text-left lg:px-14 lg:pb-16">
-        <div className="hero-figure-in mx-auto max-w-3xl md:mx-0">
-          <p className="font-arabic text-lg text-gold sm:text-xl" lang="ar" dir="rtl">
-            {site.nameAr}
-          </p>
-          <h1 className="hero-title font-display mt-3 text-[clamp(2.2rem,6vw,4.6rem)] font-semibold leading-[0.92] text-white">
-            {site.name}
-          </h1>
-          <p className="mt-4 text-[11px] tracking-[0.38em] text-white/75 uppercase">
-            {copy.collection}
-          </p>
-          <p className="hero-title font-display mt-4 max-w-md text-xl italic text-white sm:text-2xl">
-            {copy.title}
-          </p>
-          <Link href="/store" className="btn-gold mt-7">
+      <div className="relative z-10 flex min-h-[calc(100svh-var(--chrome-h))] flex-col items-center justify-end px-6 pb-16 text-center text-white">
+        <div className="hero-figure-in">
+          <h1 className="sr-only">{site.name}</h1>
+          <p className="text-[12px] tracking-[0.42em] uppercase">{copy.collection}</p>
+          <Link href="/store" className="btn-ghost mt-7">
             {copy.ctaStore}
           </Link>
         </div>
+        <a
+          href="#arrivals"
+          className="scroll-cue mt-10 text-white/80"
+          aria-label={copy.scroll}
+        >
+          <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" aria-hidden>
+            <path
+              d="M6 9l6 6 6-6"
+              stroke="currentColor"
+              strokeWidth="1.4"
+              strokeLinecap="round"
+            />
+          </svg>
+        </a>
       </div>
     </section>
   );

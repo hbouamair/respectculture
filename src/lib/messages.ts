@@ -15,12 +15,14 @@ export type Messages = {
     closeMenu: string;
     openMenu: string;
     language: string;
+    banner: string;
   };
   hero: {
     title: string;
     lead: string;
     ctaStore: string;
     collection: string;
+    scroll: string;
   };
   home: {
     conceptTitle: string;
@@ -33,6 +35,16 @@ export type Messages = {
     galleryLead: string;
     galleryCta: string;
     whatsappNote: string;
+    viewAll: string;
+    collectionsTitle: string;
+    jerseyTitle: string;
+    jerseyBody: string;
+    streetTitle: string;
+    streetBody: string;
+    tabFeatured: string;
+    tabJerseys: string;
+    tabHoodies: string;
+    shopCollection: string;
   };
   store: {
     title: string;
@@ -118,12 +130,14 @@ export const messages: Record<Locale, Messages> = {
       closeMenu: "Close menu",
       openMenu: "Open menu",
       language: "Language",
+      banner: "Checkout on WhatsApp · Casablanca",
     },
     hero: {
       title: "Wear the culture. Move in it.",
       lead: "Dance apparel that honors the traditions you carry — comfort, color, and cut for the floor and the street.",
-      ctaStore: "Shop the collection",
-      collection: "New collection 2026",
+      ctaStore: "Shop now",
+      collection: "New arrivals",
+      scroll: "Scroll",
     },
     home: {
       conceptTitle: "Dance as a living language",
@@ -132,13 +146,24 @@ export const messages: Record<Locale, Messages> = {
       lookTitle: "The clothes, on people",
       lookLead:
         "Models and dancers wearing Respect Your Culture — jerseys, tees, and cuts built to move.",
-      dropTitle: "The collection",
+      dropTitle: "New arrivals",
       dropLead: "Hoodies, tees, jerseys. Gold lockup on black. ثقافة on crimson.",
       galleryTitle: "People dancing in the clothes",
       galleryLead: "Hover a clip to play. Click to open it full.",
       galleryCta: "Open the gallery",
       whatsappNote:
         "No card on this site. Pick the piece, then confirm the order on WhatsApp.",
+      viewAll: "View all",
+      collectionsTitle: "Curated collections",
+      jerseyTitle: "Jerseys",
+      jerseyBody:
+        "Thaqafa on the chest. Zarbia red, tapestry print — pieces cut for the floor and the street.",
+      streetTitle: "Lookbook",
+      streetBody: "The clothes on people. Casablanca, desert, riad — worn, not styled in a vacuum.",
+      tabFeatured: "Featured",
+      tabJerseys: "Jerseys",
+      tabHoodies: "Hoodies",
+      shopCollection: "Shop",
     },
     store: {
       title: "Store",
@@ -224,12 +249,14 @@ export const messages: Record<Locale, Messages> = {
       closeMenu: "Fermer le menu",
       openMenu: "Ouvrir le menu",
       language: "Langue",
+      banner: "Commande WhatsApp · Casablanca",
     },
     hero: {
       title: "Porte la culture. Bouge dedans.",
       lead: "Des vêtements de danse qui honorent les traditions que tu portes — confort, couleur et coupe, pour le floor et la rue.",
-      ctaStore: "Voir la collection",
-      collection: "Nouvelle collection 2026",
+      ctaStore: "Acheter",
+      collection: "Nouveautés",
+      scroll: "Défiler",
     },
     home: {
       conceptTitle: "La danse comme langue vivante",
@@ -238,13 +265,24 @@ export const messages: Record<Locale, Messages> = {
       lookTitle: "Les pièces, portées",
       lookLead:
         "Mannequins et danseurs en Respect Your Culture — maillots, tees et coupes faites pour bouger.",
-      dropTitle: "La collection",
+      dropTitle: "Nouveautés",
       dropLead: "Hoodies, tees, maillots. Lockup or sur noir. ثقافة sur cramoisi.",
       galleryTitle: "Des gens qui dansent dans les pièces",
       galleryLead: "Survole un clip pour le lire. Clique pour l’ouvrir en grand.",
       galleryCta: "Ouvrir la galerie",
       whatsappNote:
         "Pas de carte sur ce site. Tu choisis la pièce, puis tu confirmes la commande sur WhatsApp.",
+      viewAll: "Tout voir",
+      collectionsTitle: "Collections",
+      jerseyTitle: "Maillots",
+      jerseyBody:
+        "Thaqafa sur la poitrine. Rouge zarbia, imprimé tapis — des pièces pour le floor et la rue.",
+      streetTitle: "Lookbook",
+      streetBody: "Les pièces portées. Casablanca, désert, riad — sur des gens, pas en studio vide.",
+      tabFeatured: "Sélection",
+      tabJerseys: "Maillots",
+      tabHoodies: "Hoodies",
+      shopCollection: "Voir",
     },
     store: {
       title: "Boutique",

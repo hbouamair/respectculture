@@ -15,13 +15,13 @@ export default async function GalleryPage() {
   const t = messages[locale];
 
   return (
-    <div className="pb-16 pt-24 sm:pt-28">
+    <div className="page-pad pb-16">
       {galleryClips.map((clip) => (
         <link key={clip.id} rel="preload" as="video" href={clip.src} />
       ))}
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <p className="reveal text-sm text-gold">{t.gallery.hover}</p>
-        <h1 className="reveal reveal-delay-1 font-display mt-3 text-5xl leading-[0.92] sm:text-7xl">
+        <h1 className="reveal reveal-delay-1 font-display mt-3 text-5xl leading-[0.92] sm:text-6xl">
           {t.gallery.title}
         </h1>
         <p className="reveal reveal-delay-2 mt-4 max-w-2xl text-lg text-muted">{t.gallery.lead}</p>

@@ -78,7 +78,7 @@ export function VideoDialog({
       </ul>
 
       {active ? (
-        <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/80 p-4 backdrop-blur-md">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 backdrop-blur-md">
           <div
             className={`glass gallery-dialog relative w-full rounded-2xl p-3 sm:p-4 ${
               isLandscapeClip(active) ? "max-w-4xl" : "max-w-md"

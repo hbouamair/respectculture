@@ -12,70 +12,73 @@ export function SiteFooter({
   copy: Messages["footer"];
 }) {
   const nav = messages[locale].nav;
+  const home = messages[locale].home;
 
   return (
-    <footer className="mt-28 border-t border-line">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
-          <div>
-            <div className="flex items-end gap-5">
-              <Image
-                src="/brand/logo-gold.png"
-                alt={site.name}
-                width={88}
-                height={88}
-                className="h-20 w-20 object-contain"
-              />
-              <Image
-                src="/brand/logo-outline.png"
-                alt=""
-                width={72}
-                height={72}
-                className="h-16 w-16 object-contain opacity-80"
-              />
-            </div>
-            <p className="font-display mt-8 text-4xl italic leading-[1.05] text-white sm:text-5xl">
-              {site.name}
-            </p>
-            <p className="font-arabic mt-3 text-2xl text-gold" lang="ar" dir="rtl">
-              {site.nameAr}
-            </p>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-muted">
-              {site.description}
-            </p>
-          </div>
+    <footer className="mt-24 border-t border-line">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
+        <div>
+          <Image
+            src="/brand/logo-gold.png"
+            alt={site.name}
+            width={64}
+            height={64}
+            className="h-14 w-14 object-contain"
+          />
+          <p className="font-display mt-6 text-2xl leading-tight">{site.name}</p>
+          <p className="font-arabic mt-2 text-lg text-gold" lang="ar" dir="rtl">
+            {site.nameAr}
+          </p>
+        </div>
 
-          <div className="flex flex-col justify-between gap-8">
-            <div className="flex flex-col gap-3 text-sm">
-              <Link href="/store" className="hover:text-gold">
-                {nav.store}
-              </Link>
-              <Link href="/gallery" className="hover:text-gold">
-                {nav.gallery}
-              </Link>
-              <Link href="/about" className="hover:text-gold">
-                {nav.about}
-              </Link>
-            </div>
-            <address className="not-italic text-sm text-muted">
-              <p>{site.contact.address}</p>
-              <a href={site.contact.emailMailto} className="mt-1 block hover:text-gold">
-                {site.contact.email}
-              </a>
-            </address>
+        <div>
+          <p className="text-[11px] tracking-[0.22em] text-muted uppercase">
+            {nav.store}
+          </p>
+          <div className="mt-4 flex flex-col gap-2.5 text-sm">
+            <Link href="/store" className="hover:text-gold">
+              {home.viewAll}
+            </Link>
+            <Link href="/store" className="hover:text-gold">
+              {home.jerseyTitle}
+            </Link>
+            <Link href="/gallery" className="hover:text-gold">
+              {nav.gallery}
+            </Link>
           </div>
+        </div>
+
+        <div>
+          <p className="text-[11px] tracking-[0.22em] text-muted uppercase">
+            {nav.about}
+          </p>
+          <div className="mt-4 flex flex-col gap-2.5 text-sm">
+            <Link href="/about" className="hover:text-gold">
+              {nav.about}
+            </Link>
+            <a href={site.contact.emailMailto} className="hover:text-gold">
+              {site.contact.email}
+            </a>
+            <p className="text-muted">{site.contact.address}</p>
+          </div>
+        </div>
+
+        <div>
+          <p className="max-w-xs text-sm leading-relaxed text-muted">
+            {site.description}
+          </p>
         </div>
       </div>
       <div className="border-t border-line px-4 py-4 text-center text-xs text-muted">
         <p>
           © 2026 {site.name}. {copy.rights}
-          <span className="mx-2 text-white/25" aria-hidden>
+          <span className="mx-2 text-muted" aria-hidden>
             ·
           </span>
           {copy.madeBy}{" "}
           <a
             href={site.social.maker}
-            className="text-gold hover:underline"
+            className="text-black hover:text-gold"
             target="_blank"
             rel="noopener noreferrer"
           >

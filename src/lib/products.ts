@@ -6,11 +6,14 @@ export type ProductColor = {
   hex: string;
 };
 
+export type ProductCategory = "hoodie" | "tee" | "jersey" | "shirt";
+
 export type Product = {
   slug: string;
   name: { en: string; fr: string };
   mark: string;
   price: number;
+  category: ProductCategory;
   description: { en: string; fr: string };
   colors: ProductColor[];
   sizes: readonly Size[];
@@ -26,7 +29,8 @@ export const products: Product[] = [
       fr: "Hoodie lockup or",
     },
     mark: "hoodie",
-    price: 650,
+    price: 500,
+    category: "hoodie",
     featured: true,
     description: {
       en: "Heavy black hoodie with the calligraphic Respect Your Culture lockup in gold. The square mark sits on the chest — same as the brand film.",
@@ -43,7 +47,8 @@ export const products: Product[] = [
       fr: "Hoodie lockup or — rouge",
     },
     mark: "hoodie",
-    price: 650,
+    price: 500,
+    category: "hoodie",
     description: {
       en: "Same gold lockup, crimson body. For nights that need to be seen from across the floor.",
       fr: "Le même lockup or, corps cramoisi. Pour les nuits qu’on voit depuis l’autre bout de la piste.",
@@ -59,7 +64,8 @@ export const products: Product[] = [
       fr: "T-shirt lockup or",
     },
     mark: "tee",
-    price: 280,
+    price: 300,
+    category: "tee",
     featured: true,
     description: {
       en: "Oversized black tee with the gold stacked mark. Worn by Scorpion 99 in the streets — Grand Taxi nights included.",
@@ -80,7 +86,8 @@ export const products: Product[] = [
       fr: "Maillot Thaqafa — édition Zarbia",
     },
     mark: "ثقافة",
-    price: 450,
+    price: 400,
+    category: "jersey",
     featured: true,
     description: {
       en: "RYC FC retro 2000. Crimson jersey with tonal zarbia pattern, black collar, gold lockup, and ثقافة — culture — across the chest.",
@@ -89,8 +96,9 @@ export const products: Product[] = [
     colors: [{ id: "red", label: { en: "Zarbia red", fr: "Rouge zarbia" }, hex: "#9B1B1B" }],
     sizes: SIZES,
     images: [
-      "/products/jersey-thaqafa/flat.jpg",
       "/products/jersey-thaqafa/detail.png",
+      "/products/jersey-thaqafa/flat.jpg",
+      "/products/jersey-thaqafa/look-desert.jpg",
       "/products/jersey-thaqafa/look-alley.jpg",
       "/products/jersey-thaqafa/look-riad.png",
     ],
@@ -102,7 +110,8 @@ export const products: Product[] = [
       fr: "Maillot Thaqafa tapis",
     },
     mark: "ثقافة",
-    price: 480,
+    price: 400,
+    category: "jersey",
     description: {
       en: "Black-and-white carpet print jersey with ثقافة at the chest. Street cut, heritage surface.",
       fr: "Maillot imprimé tapis noir et blanc avec ثقافة sur la poitrine. Coupe street, surface héritage.",
@@ -124,7 +133,8 @@ export const products: Product[] = [
       fr: "Manches longues zellige",
     },
     mark: "lockup",
-    price: 480,
+    price: 300,
+    category: "shirt",
     description: {
       en: "Long sleeve with a tile-like geometric print and the gold lockup on the chest. Built to move.",
       fr: "Manches longues à motif géométrique façon zellige et lockup or sur la poitrine. Fait pour bouger.",
@@ -138,22 +148,6 @@ export const products: Product[] = [
     ],
     sizes: SIZES,
     images: ["/products/shirt-zellige/look.jpg"],
-  },
-  {
-    slug: "jacket-turath",
-    name: {
-      en: "Turath jacket",
-      fr: "Veste Turath",
-    },
-    mark: "تراث",
-    price: 890,
-    description: {
-      en: "Crimson jacket with تراث — heritage — in white calligraphy over a procession of silhouettes. Gold lockup at the neck.",
-      fr: "Veste cramoisie avec تراث — héritage — en calligraphie blanche sur un cortège de silhouettes. Lockup or au col.",
-    },
-    colors: [{ id: "red", label: { en: "Crimson", fr: "Cramoisi" }, hex: "#C41E3A" }],
-    sizes: SIZES,
-    images: ["/products/jacket-turath/back.png"],
   },
 ];
 

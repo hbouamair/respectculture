@@ -52,8 +52,8 @@ export function ProductForm({
               key={option}
               className={`min-w-11 cursor-pointer border px-3 py-2 text-center text-sm ${
                 size === option
-                  ? "border-gold bg-gold text-black"
-                  : "border-line hover:border-gold"
+                  ? "border-black bg-black text-white"
+                  : "border-line hover:border-black"
               }`}
             >
               <input
@@ -77,7 +77,7 @@ export function ProductForm({
             <label
               key={option.id}
               className={`flex cursor-pointer items-center gap-2 border px-3 py-2 text-sm ${
-                colorId === option.id ? "border-gold" : "border-line hover:border-gold"
+                colorId === option.id ? "border-black" : "border-line hover:border-black"
               }`}
             >
               <input
@@ -110,7 +110,7 @@ export function ProductForm({
           max={10}
           value={qty}
           onChange={(e) => setQty(Math.max(1, Number(e.target.value)))}
-          className="w-24 border border-line bg-black px-3 py-2"
+          className="w-24 border border-line bg-white px-3 py-2"
         />
       </div>
 

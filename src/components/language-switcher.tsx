@@ -17,25 +17,21 @@ export function LanguageSwitcher({
   }
 
   return (
-    <div
-      className="flex items-center rounded-full bg-white/[0.05] p-0.5 ring-1 ring-white/10"
-      aria-label={label}
-    >
+    <div className="flex items-center gap-2 text-[11px] tracking-[0.18em]" aria-label={label}>
       <button
         type="button"
         onClick={() => setLocale("en")}
-        className={`rounded-full px-2.5 py-1 text-[11px] ${
-          locale === "en" ? "bg-gold text-black" : "text-white/70 hover:text-white"
-        }`}
+        className={locale === "en" ? "text-black" : "text-muted hover:text-black"}
       >
         EN
       </button>
+      <span className="text-muted" aria-hidden>
+        /
+      </span>
       <button
         type="button"
         onClick={() => setLocale("fr")}
-        className={`rounded-full px-2.5 py-1 text-[11px] ${
-          locale === "fr" ? "bg-gold text-black" : "text-white/70 hover:text-white"
-        }`}
+        className={locale === "fr" ? "text-black" : "text-muted hover:text-black"}
       >
         FR
       </button>

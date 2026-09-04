@@ -50,7 +50,7 @@ export function LookbookMosaic({ locale }: { locale: Locale }) {
               sizes="(max-width: 768px) 50vw, 25vw"
             />
           </div>
-          <figcaption className="mt-2 text-sm text-white/70 transition-colors duration-300 group-hover:text-gold">
+          <figcaption className="mt-2 text-sm text-muted transition-colors duration-300 group-hover:text-black">
             {shot.alt[locale]}
           </figcaption>
         </figure>
