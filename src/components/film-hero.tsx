@@ -12,7 +12,7 @@ export function FilmHero({ copy }: { copy: Messages["hero"] }) {
         fill
         priority
         quality={90}
-        className="hero-ken object-cover object-[center_22%]"
+        className="hero-ken object-cover object-[36%_42%] md:object-[center_22%]"
         sizes="100vw"
       />
       <div className="hero-shade pointer-events-none absolute inset-0" />
