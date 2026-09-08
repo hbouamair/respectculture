@@ -18,10 +18,10 @@ export default async function StorePage() {
   return (
     <div className="page-pad mx-auto max-w-7xl px-4 pb-20 sm:px-6">
       <ScrollIn>
-        <h1 className="font-display text-4xl sm:text-6xl">{t.store.title}</h1>
+        <h1 className="font-display text-4xl sm:text-5xl">{t.store.title}</h1>
         <p className="mt-4 max-w-xl text-muted">{t.store.lead}</p>
       </ScrollIn>
-      <div className="mt-14 grid grid-cols-2 gap-x-4 gap-y-12 md:grid-cols-3 lg:grid-cols-4">
+      <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-12 md:grid-cols-3 lg:grid-cols-4">
         {products.map((product) => (
           <ProductCard key={product.slug} product={product} locale={locale} />
         ))}

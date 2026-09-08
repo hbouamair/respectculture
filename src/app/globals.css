@@ -65,7 +65,7 @@ button,
 }
 
 .page-pad {
-  padding-top: calc(var(--chrome-h) + 2.75rem);
+  padding-top: 1.25rem;
 }
 
 .nav-link {
@@ -224,8 +224,17 @@ button,
   }
 }
 
-.hero-figure-in {
-  animation: hero-rise 1.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+.gallery-swap {
+  animation: gallery-fade 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes gallery-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes hero-rise {
@@ -328,6 +337,7 @@ button,
   .mosaic-shot,
   .gallery-shot,
   .gallery-dialog,
+  .gallery-swap,
   .mobile-menu,
   .mobile-link,
   .scroll-cue {

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { getLocale } from "@/lib/locale";
 import { messages } from "@/lib/messages";
 import { site } from "@/lib/site";
@@ -19,7 +18,7 @@ export default async function AboutPage() {
     <div className="page-pad pb-20">
       <section className="mx-auto grid max-w-7xl items-start gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-16">
         <figure className="relative">
-          <div className="relative aspect-[3/4] overflow-hidden bg-surface lg:min-h-[calc(100svh-10rem)] lg:aspect-auto">
+          <div className="relative aspect-[3/4] overflow-hidden bg-surface lg:min-h-[calc(100svh-8rem)] lg:aspect-auto">
             <Image
               src="/lookbook/scorpion-portrait.jpg"
               alt={`${site.founder.name} — ${site.founder.legalName}`}
@@ -62,10 +61,7 @@ export default async function AboutPage() {
             <p>{t.about.p3}</p>
             <p>{t.about.p4}</p>
           </div>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Link href="/store" className="btn-gold inline-flex">
-              {messages[locale].hero.ctaStore}
-            </Link>
+          <div className="mt-10">
             <a
               href={site.social.founder}
               className="text-sm text-gold hover:underline"

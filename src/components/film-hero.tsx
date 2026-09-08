@@ -7,12 +7,12 @@ export function FilmHero({ copy }: { copy: Messages["hero"] }) {
   return (
     <section className="relative min-h-[calc(100svh-var(--chrome-h))] overflow-hidden bg-black">
       <Image
-        src="/products/jersey-thaqafa/look-desert.jpg"
-        alt="Thaqafa jersey — Zarbia edition, worn"
+        src="/lookbook/hero-left.jpg"
+        alt="Respect Your Culture — worn"
         fill
         priority
         quality={90}
-        className="hero-ken object-cover object-[center_18%]"
+        className="hero-ken object-cover object-[center_22%]"
         sizes="100vw"
       />
       <div className="hero-shade pointer-events-none absolute inset-0" />

@@ -15,7 +15,7 @@ export function SiteFooter({
   const home = messages[locale].home;
 
   return (
-    <footer className="mt-24 border-t border-line">
+    <footer className="mt-12 border-t border-line">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <Image

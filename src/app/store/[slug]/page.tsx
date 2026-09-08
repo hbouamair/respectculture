@@ -5,7 +5,7 @@ import { ProductForm } from "@/components/product-form";
 import { ProductGallery } from "@/components/product-gallery";
 import { getLocale } from "@/lib/locale";
 import { messages } from "@/lib/messages";
-import { formatMad, getProduct, products } from "@/lib/products";
+import { formatMad, getGalleryImages, getProduct, products } from "@/lib/products";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -37,15 +37,15 @@ export default async function ProductPage({ params }: Props) {
       <Link href="/store" className="text-sm text-muted hover:text-black">
         {t.product.back}
       </Link>
-      <div className="mt-6 grid gap-10 lg:grid-cols-2 lg:items-start">
+      <div className="mt-4 grid gap-10 lg:grid-cols-2 lg:items-start">
         <div>
-          <ProductGallery images={product.images} alt={product.name[locale]} />
+          <ProductGallery images={getGalleryImages(product)} alt={product.name[locale]} />
         </div>
         <div>
           <p className="font-arabic text-xl text-gold" lang="ar" dir="rtl">
             {product.mark}
           </p>
-          <h1 className="font-display mt-3 text-4xl sm:text-5xl">{product.name[locale]}</h1>
+          <h1 className="font-display mt-3 text-3xl sm:text-4xl lg:text-5xl">{product.name[locale]}</h1>
           <p className="mt-4 text-xl">{formatMad(product.price)}</p>
           <p className="mt-6 max-w-md leading-relaxed text-muted">
             {product.description[locale]}

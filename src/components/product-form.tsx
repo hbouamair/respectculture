@@ -30,7 +30,7 @@ export function ProductForm({
       color: color.label[locale],
       qty,
       price: product.price,
-      image: product.images[0],
+      image: product.looks?.[0] ?? product.images[0],
     });
     setJustAdded(true);
     window.setTimeout(() => setJustAdded(false), 1600);

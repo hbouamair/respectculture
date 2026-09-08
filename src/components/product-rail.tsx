@@ -31,7 +31,7 @@ export function ProductRail({
   ];
 
   return (
-    <section id="arrivals" className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+    <section id="arrivals" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <h2 className="font-display text-3xl sm:text-4xl">{copy.dropTitle}</h2>

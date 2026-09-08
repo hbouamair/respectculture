@@ -19,7 +19,7 @@ export const site = {
     emailMailto: "mailto:respectyourculture@gmail.com",
   },
   founder: {
-    name: "Scorpion 99",
+    name: "Scorpion",
     legalName: "Mohammed Garmoumi",
   },
 } as const;

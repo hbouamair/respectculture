@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Locale } from "@/lib/messages";
-import { formatMad, type Product } from "@/lib/products";
+import { formatMad, getHoverImage, type Product } from "@/lib/products";
 
 export function ProductCard({
   product,
@@ -12,6 +12,8 @@ export function ProductCard({
   viewLabel?: string;
   featured?: boolean;
 }) {
+  const hoverImage = getHoverImage(product);
+
   return (
     <article className="group">
       <Link href={`/store/${product.slug}`} className="block">
@@ -20,9 +22,22 @@ export function ProductCard({
             src={product.images[0]}
             alt={product.name[locale]}
             fill
-            className="shot-zoom object-cover"
+            className={`object-cover transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              hoverImage
+                ? "group-hover:scale-105 group-hover:opacity-0"
+                : "shot-zoom"
+            }`}
             sizes="(max-width: 768px) 50vw, 25vw"
           />
+          {hoverImage ? (
+            <Image
+              src={hoverImage}
+              alt=""
+              fill
+              className="object-cover opacity-0 scale-[1.06] transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-100 group-hover:opacity-100"
+              sizes="(max-width: 768px) 50vw, 25vw"
+            />
+          ) : null}
         </div>
         <div className="mt-3">
           <h3 className="text-[13px] tracking-wide">{product.name[locale]}</h3>

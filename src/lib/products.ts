@@ -6,7 +6,7 @@ export type ProductColor = {
   hex: string;
 };
 
-export type ProductCategory = "hoodie" | "tee" | "jersey" | "shirt";
+export type ProductCategory = "hoodie" | "tee" | "jersey";
 
 export type Product = {
   slug: string;
@@ -18,6 +18,7 @@ export type Product = {
   colors: ProductColor[];
   sizes: readonly Size[];
   images: string[];
+  looks?: string[];
   featured?: boolean;
 };
 
@@ -39,6 +40,7 @@ export const products: Product[] = [
     colors: [{ id: "black", label: { en: "Black", fr: "Noir" }, hex: "#000000" }],
     sizes: SIZES,
     images: ["/products/hoodie-gold/flat.jpg"],
+    looks: ["/products/hoodie-gold/worn.jpg"],
   },
   {
     slug: "hoodie-red",
@@ -56,6 +58,7 @@ export const products: Product[] = [
     colors: [{ id: "red", label: { en: "Red", fr: "Rouge" }, hex: "#B1121C" }],
     sizes: SIZES,
     images: ["/products/hoodie-red/flat.jpg"],
+    looks: ["/products/hoodie-red/worn.jpg"],
   },
   {
     slug: "tee-gold",
@@ -68,15 +71,16 @@ export const products: Product[] = [
     category: "tee",
     featured: true,
     description: {
-      en: "Oversized black tee with the gold stacked mark. Worn by Scorpion 99 in the streets — Grand Taxi nights included.",
-      fr: "Tee noir oversized avec le mark or empilé. Porté par Scorpion 99 dans la rue — y compris les nuits Grand Taxi.",
+      en: "Oversized black tee with the gold stacked mark. Worn by Scorpion in the streets — Grand Taxi nights included.",
+      fr: "Tee noir oversized avec le mark or empilé. Porté par Scorpion dans la rue — y compris les nuits Grand Taxi.",
     },
     colors: [{ id: "black", label: { en: "Black", fr: "Noir" }, hex: "#000000" }],
     sizes: SIZES,
-    images: [
+    images: ["/products/tee-gold/flat.jpg"],
+    looks: [
       "/products/tee-gold/worn.jpg",
       "/products/tee-gold/look-taxi.jpg",
-      "/products/tee-gold/flat.jpg",
+      "/products/tee-gold/look-taxi-full.jpg",
     ],
   },
   {
@@ -96,63 +100,79 @@ export const products: Product[] = [
     colors: [{ id: "red", label: { en: "Zarbia red", fr: "Rouge zarbia" }, hex: "#9B1B1B" }],
     sizes: SIZES,
     images: [
+      "/products/jersey-thaqafa/flat-lay.png",
       "/products/jersey-thaqafa/detail.png",
       "/products/jersey-thaqafa/flat.jpg",
+    ],
+    looks: [
       "/products/jersey-thaqafa/look-desert.jpg",
       "/products/jersey-thaqafa/look-alley.jpg",
       "/products/jersey-thaqafa/look-riad.png",
+      "/products/jersey-thaqafa/look-crew.jpg",
     ],
   },
   {
     slug: "jersey-tapestry",
     name: {
       en: "Thaqafa tapestry jersey",
-      fr: "Maillot Thaqafa tapis",
+      fr: "Maillot Thaqafa paisley",
     },
     mark: "ثقافة",
     price: 400,
     category: "jersey",
     description: {
-      en: "Black-and-white carpet print jersey with ثقافة at the chest. Street cut, heritage surface.",
-      fr: "Maillot imprimé tapis noir et blanc avec ثقافة sur la poitrine. Coupe street, surface héritage.",
+      en: "Black-and-white paisley jersey with ثقافة at the chest. Street cut, heritage surface.",
+      fr: "Maillot paisley noir et blanc avec ثقافة sur la poitrine. Coupe street, surface héritage.",
     },
     colors: [
       {
         id: "tapestry",
-        label: { en: "Tapestry", fr: "Tapis" },
+        label: { en: "Paisley", fr: "Paisley" },
         hex: "#2A2A2A",
       },
     ],
     sizes: SIZES,
-    images: ["/products/jersey-tapestry/look.jpg"],
+    images: ["/products/jersey-tapestry/flat.png"],
+    looks: ["/products/jersey-tapestry/look.jpg"],
   },
   {
-    slug: "shirt-zellige",
+    slug: "jersey-carpet",
     name: {
-      en: "Zellige long sleeve",
-      fr: "Manches longues zellige",
+      en: "Thaqafa jersey — carpet edition",
+      fr: "Maillot Thaqafa — édition tapis",
     },
-    mark: "lockup",
-    price: 300,
-    category: "shirt",
+    mark: "ثقافة",
+    price: 400,
+    category: "jersey",
+    featured: true,
     description: {
-      en: "Long sleeve with a tile-like geometric print and the gold lockup on the chest. Built to move.",
-      fr: "Manches longues à motif géométrique façon zellige et lockup or sur la poitrine. Fait pour bouger.",
+      en: "Burgundy carpet-print jersey with cream motifs, black collar, gold lockup, and ثقافة — culture — across the chest.",
+      fr: "Maillot imprimé tapis bordeaux aux motifs crème, col noir, lockup or, et ثقافة — culture — sur la poitrine.",
     },
     colors: [
       {
-        id: "zellige",
-        label: { en: "Zellige", fr: "Zellige" },
-        hex: "#4A1520",
+        id: "carpet",
+        label: { en: "Carpet burgundy", fr: "Bordeaux tapis" },
+        hex: "#6B2B2B",
       },
     ],
     sizes: SIZES,
-    images: ["/products/shirt-zellige/worn.jpg"],
+    images: ["/products/jersey-carpet/flat.png"],
+    looks: ["/lookbook/hero-left.jpg"],
   },
 ];
 
 export function getProduct(slug: string) {
   return products.find((p) => p.slug === slug);
+}
+
+export function getHoverImage(product: Product) {
+  return product.looks?.[0];
+}
+
+export function getGalleryImages(product: Product) {
+  const looks = product.looks ?? [];
+  return [...looks, ...product.images.filter((src) => !looks.includes(src))];
 }
 
 export function getFeaturedProducts() {

@@ -36,15 +36,10 @@ export type Messages = {
     galleryCta: string;
     whatsappNote: string;
     viewAll: string;
-    collectionsTitle: string;
     jerseyTitle: string;
-    jerseyBody: string;
-    streetTitle: string;
-    streetBody: string;
     tabFeatured: string;
     tabJerseys: string;
     tabHoodies: string;
-    shopCollection: string;
   };
   store: {
     title: string;
@@ -145,7 +140,7 @@ export const messages: Record<Locale, Messages> = {
         "We make dancewear that celebrates cultural diversity: comfort, durability, and style, with colors and patterns that belong on the floor.",
       lookTitle: "The clothes, on people",
       lookLead:
-        "Models and dancers wearing Respect Your Culture — jerseys, tees, and cuts built to move.",
+        "Jerseys, tees, and cuts built to move — three frames from the drop.",
       dropTitle: "New arrivals",
       dropLead: "Hoodies, tees, jerseys. Gold lockup on black. ثقافة on crimson.",
       galleryTitle: "People dancing in the clothes",
@@ -154,16 +149,10 @@ export const messages: Record<Locale, Messages> = {
       whatsappNote:
         "No card on this site. Pick the piece, then confirm the order on WhatsApp.",
       viewAll: "View all",
-      collectionsTitle: "Curated collections",
       jerseyTitle: "Jerseys",
-      jerseyBody:
-        "Thaqafa on the chest. Zarbia red, tapestry print — pieces cut for the floor and the street.",
-      streetTitle: "Lookbook",
-      streetBody: "The clothes on people. Casablanca, desert, riad — worn, not styled in a vacuum.",
       tabFeatured: "Featured",
       tabJerseys: "Jerseys",
       tabHoodies: "Hoodies",
-      shopCollection: "Shop",
     },
     store: {
       title: "Store",
@@ -196,7 +185,7 @@ export const messages: Record<Locale, Messages> = {
       p4: "Join us in our journey of celebrating cultural diversity through dance. Shop our collection today and show your love and respect for your culture on and off the dance floor.",
       founder: "Founder, choreographer, teacher",
       founderStory:
-        "Mohammed Garmoumi — Scorpion 99 — is a dancer and teacher from Casablanca, now based between Marrakech and the road. He launched the brand so dancers could wear their roots as they move.",
+        "Mohammed Garmoumi — Scorpion — is a dancer and teacher from Casablanca, now based between Marrakech and the road. He launched the brand so dancers could wear their roots as they move.",
     },
     cart: {
       title: "Cart",
@@ -264,7 +253,7 @@ export const messages: Record<Locale, Messages> = {
         "Nous créons des tenues de danse qui célèbrent la diversité culturelle : confort, durabilité et style, avec des couleurs et des motifs faits pour le floor.",
       lookTitle: "Les pièces, portées",
       lookLead:
-        "Mannequins et danseurs en Respect Your Culture — maillots, tees et coupes faites pour bouger.",
+        "Maillots, tees et coupes faites pour bouger — trois images de la drop.",
       dropTitle: "Nouveautés",
       dropLead: "Hoodies, tees, maillots. Lockup or sur noir. ثقافة sur cramoisi.",
       galleryTitle: "Des gens qui dansent dans les pièces",
@@ -273,16 +262,10 @@ export const messages: Record<Locale, Messages> = {
       whatsappNote:
         "Pas de carte sur ce site. Tu choisis la pièce, puis tu confirmes la commande sur WhatsApp.",
       viewAll: "Tout voir",
-      collectionsTitle: "Collections",
       jerseyTitle: "Maillots",
-      jerseyBody:
-        "Thaqafa sur la poitrine. Rouge zarbia, imprimé tapis — des pièces pour le floor et la rue.",
-      streetTitle: "Lookbook",
-      streetBody: "Les pièces portées. Casablanca, désert, riad — sur des gens, pas en studio vide.",
       tabFeatured: "Sélection",
       tabJerseys: "Maillots",
       tabHoodies: "Hoodies",
-      shopCollection: "Voir",
     },
     store: {
       title: "Boutique",
@@ -315,7 +298,7 @@ export const messages: Record<Locale, Messages> = {
       p4: "Rejoins-nous dans ce voyage : célébrer la diversité culturelle par la danse. Découvre la collection et porte l’amour et le respect de ta culture, sur le floor et en dehors.",
       founder: "Fondateur, chorégraphe, professeur",
       founderStory:
-        "Mohammed Garmoumi — Scorpion 99 — est danseur et prof, de Casablanca, entre Marrakech et la route. Il a lancé la marque pour que les danseurs portent leurs racines en mouvement.",
+        "Mohammed Garmoumi — Scorpion — est danseur et prof, de Casablanca, entre Marrakech et la route. Il a lancé la marque pour que les danseurs portent leurs racines en mouvement.",
     },
     cart: {
       title: "Panier",

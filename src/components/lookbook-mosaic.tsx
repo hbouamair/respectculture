@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import type { Locale } from "@/lib/messages";
-import { lookbookShots } from "@/lib/lookbook";
+import { wornShots } from "@/lib/lookbook";
 
 export function LookbookMosaic({ locale }: { locale: Locale }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -30,29 +30,22 @@ export function LookbookMosaic({ locale }: { locale: Locale }) {
   }, []);
 
   return (
-    <div
-      ref={ref}
-      className={`columns-2 gap-3 md:columns-3 lg:columns-4 ${inView ? "mosaic-in" : ""}`}
-    >
-      {lookbookShots.map((shot, index) => (
+    <div ref={ref} className={`grid grid-cols-1 gap-3 sm:grid-cols-3 ${inView ? "mosaic-in" : ""}`}>
+      {wornShots.map((shot, index) => (
         <figure
           key={shot.src}
-          className="mosaic-shot group mb-3 break-inside-avoid"
+          className="mosaic-shot group"
           style={{ animationDelay: `${index * 90}ms` }}
         >
-          <div className="shot-frame overflow-hidden">
+          <div className="shot-frame relative aspect-[3/4] overflow-hidden bg-surface">
             <Image
               src={shot.src}
               alt={shot.alt[locale]}
-              width={1200}
-              height={1600}
-              className="shot-zoom h-auto w-full"
-              sizes="(max-width: 768px) 50vw, 25vw"
+              fill
+              className="shot-zoom object-cover"
+              sizes="(max-width: 640px) 100vw, 33vw"
             />
           </div>
-          <figcaption className="mt-2 text-sm text-muted transition-colors duration-300 group-hover:text-black">
-            {shot.alt[locale]}
-          </figcaption>
         </figure>
       ))}
     </div>
